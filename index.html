@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mu Digital — Ops Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A84C;--jade:#1D9E75;--red:#E24B4A;--amber:#BA7517;--blue:#378ADD;
+  --bg:#0F0F0F;--bg2:#161616;--bg3:#1E1E1E;--bg4:#252525;
+  --border:#2A2A2A;--border2:#333;
+  --text:#E8E6E1;--text2:#9A9690;--text3:#5A5855;
+  --font-data:'IBM Plex Mono',monospace;--font-head:'Syne',sans-serif
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font-head);min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Layout */
+.shell{max-width:1400px;margin:0 auto;padding:24px 28px}
+.header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.logo{font-size:22px;font-weight:700;letter-spacing:-0.5px}
+.logo span{color:var(--gold)}
+.logo-sub{font-family:var(--font-data);font-size:10px;color:var(--text3);margin-top:3px;letter-spacing:1px}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+/* Chain toggle */
+.chain-toggle{display:flex;background:var(--bg3);border-radius:6px;padding:3px;gap:2px;border:1px solid var(--border)}
+.chain-btn{font-family:var(--font-data);font-size:11px;padding:4px 12px;border-radius:4px;border:none;cursor:pointer;background:none;color:var(--text2);transition:all .15s;position:relative}
+.chain-btn.active-monad{background:var(--jade);color:#fff}
+.chain-btn.active-eth{background:#627EEA;color:#fff}
+.chain-btn.soon{opacity:.45;cursor:default}
+.soon-tag{position:absolute;top:-6px;right:-2px;font-size:8px;background:var(--amber);color:#fff;border-radius:2px;padding:1px 4px}
+
+.live-dot{width:6px;height:6px;border-radius:50%;animation:pulse 2s infinite;display:inline-block}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.live-label{font-family:var(--font-data);font-size:11px}
+.ts{font-family:var(--font-data);font-size:11px;color:var(--text3)}
+.refresh-btn{font-family:var(--font-data);font-size:11px;padding:4px 12px;border:1px solid var(--border2);border-radius:4px;background:none;color:var(--text2);cursor:pointer;transition:.15s}
+.refresh-btn:hover{background:var(--bg3);color:var(--text)}
+
+/* Banner */
+.chain-banner{font-family:var(--font-data);font-size:11px;padding:8px 14px;border-radius:6px;margin-bottom:16px;border:1px solid;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.banner-monad{background:#0A1F17;border-color:#1D9E7540;color:#5DCAA5}
+.banner-eth{background:#0E0F2A;border-color:#627EEA40;color:#818CF8}
+.banner-loading{background:var(--bg3);border-color:var(--border);color:var(--text3)}
+.data-age{font-size:10px;color:var(--text3)}
+
+/* Tabs */
+.tab-row{display:flex;gap:4px;margin-bottom:20px;flex-wrap:wrap}
+.tab-btn{font-family:var(--font-data);font-size:11px;padding:5px 14px;border:1px solid var(--border);border-radius:4px;background:none;cursor:pointer;color:var(--text2);transition:.15s}
+.tab-btn:hover{background:var(--bg3);color:var(--text)}
+.tab-btn.active{background:var(--bg3);color:var(--text);border-color:var(--border2)}
+
+/* Section */
+.section{margin-bottom:24px}
+.section-label{font-family:var(--font-data);font-size:10px;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--border)}
+
+/* Grids */
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
+.token-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+
+/* Cards */
+.kpi-card{background:var(--bg3);border-radius:8px;padding:16px}
+.kpi-label{font-family:var(--font-data);font-size:10px;color:var(--text3);letter-spacing:.5px;margin-bottom:8px}
+.kpi-val{font-family:var(--font-data);font-size:24px;font-weight:500;color:var(--text);line-height:1}
+.kpi-sub{font-family:var(--font-data);font-size:11px;margin-top:6px}
+.up{color:var(--jade)}.warn{color:var(--amber)}.dn{color:var(--red)}.neutral{color:var(--text3)}
+
+.chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px}
+.chart-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:14px;font-family:var(--font-head)}
+
+.token-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;position:relative}
+.token-card.core{border-color:var(--gold)40}
+.token-sym{font-family:var(--font-data);font-size:10px;letter-spacing:1px;color:var(--gold);margin-bottom:3px}
+.token-desc{font-family:var(--font-data);font-size:9px;color:var(--text3);margin-bottom:8px}
+.token-supply{font-family:var(--font-data);font-size:18px;font-weight:500;color:var(--text)}
+.token-addr{font-family:var(--font-data);font-size:10px;color:var(--text3);margin-top:4px}
+.core-pip{position:absolute;top:8px;right:8px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+/* Badges */
+.badge{display:inline-block;font-size:10px;font-family:var(--font-data);padding:2px 8px;border-radius:3px;font-weight:500}
+.badge-g{background:#0A2018;color:#5DCAA5;border:1px solid #1D9E7540}
+.badge-a{background:#201508;color:#EF9F27;border:1px solid #BA751740}
+.badge-r{background:#200A0A;color:#E24B4A;border:1px solid #E24B4A40}
+.badge-n{background:var(--bg4);color:var(--text2);border:1px solid var(--border)}
+.pill-monad{display:inline-block;font-size:9px;padding:1px 6px;border-radius:2px;background:#0A1F17;color:#5DCAA5;font-family:var(--font-data)}
+.pill-eth{display:inline-block;font-size:9px;padding:1px 6px;border-radius:2px;background:#0E0F2A;color:#818CF8;font-family:var(--font-data)}
+
+/* Tables */
+.data-table{width:100%;border-collapse:collapse;font-family:var(--font-data);font-size:12px}
+.data-table th{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);text-align:left;padding:6px 10px;border-bottom:1px solid var(--border);font-weight:400}
+.data-table td{padding:9px 10px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:var(--bg3)}
+
+/* Funnel bars */
+.funnel-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.funnel-label{font-family:var(--font-data);font-size:11px;color:var(--text2);width:115px;flex-shrink:0}
+.funnel-track{flex:1;height:26px;background:var(--bg3);border-radius:4px;overflow:hidden;position:relative}
+.funnel-fill{height:100%;border-radius:4px;position:absolute;top:0;left:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.funnel-pct{font-family:var(--font-data);font-size:12px;font-weight:500;color:var(--text);width:38px;text-align:right;flex-shrink:0}
+.funnel-target{font-family:var(--font-data);font-size:10px;color:var(--text3);width:44px;text-align:right;flex-shrink:0}
+
+/* Config panel */
+.config-note{font-family:var(--font-data);font-size:11px;color:var(--text2);background:var(--bg3);padding:12px 14px;border-radius:6px;border-left:3px solid var(--gold);margin-bottom:14px;line-height:1.7}
+.config-note code{color:var(--gold);font-size:10px}
+
+/* Spinner */
+.spinner{display:inline-block;width:12px;height:12px;border:2px solid var(--border2);border-top-color:var(--jade);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-row{font-family:var(--font-data);font-size:12px;color:var(--text3);padding:16px}
+
+/* No data */
+.no-data{font-family:var(--font-data);font-size:11px;color:var(--text3);padding:16px;text-align:center;border:1px dashed var(--border);border-radius:6px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="logo">mu<span>.</span>digital — ops dashboard</div>
+      <div class="logo-sub">INTERNAL · PRODUCT LEAD VIEW · AUTO-REFRESHES HOURLY</div>
+    </div>
+    <div class="header-right">
+      <div class="chain-toggle">
+        <button class="chain-btn active-monad" id="btn-monad" onclick="switchChain('monad')">◆ Monad</button>
+        <button class="chain-btn soon" id="btn-eth" onclick="switchChain('eth')">
+          ⬡ Ethereum<span class="soon-tag">soon</span>
+        </button>
+      </div>
+      <span class="live-dot" id="live-dot" style="background:var(--jade)"></span>
+      <span class="live-label" id="live-label" style="color:var(--jade)">monad live</span>
+      <span class="ts" id="ts">—</span>
+      <button class="refresh-btn" onclick="loadData()">↻ refresh</button>
+    </div>
+  </div>
+
+  <!-- Chain banner -->
+  <div id="chain-banner" class="chain-banner banner-loading">
+    <span><span class="spinner"></span>Loading dashboard data…</span>
+    <span class="data-age" id="data-age"></span>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tab-row">
+    <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+    <button class="tab-btn" onclick="showTab('funnel')">Funnel</button>
+    <button class="tab-btn" onclick="showTab('chain')">On-chain</button>
+    <button class="tab-btn" onclick="showTab('whales')">Whales</button>
+    <button class="tab-btn" onclick="showTab('shipping')">Shipping</button>
+    <button class="tab-btn" onclick="showTab('contracts')">Contracts</button>
+  </div>
+
+  <!-- TAB: OVERVIEW -->
+  <div id="tab-overview">
+    <div class="section">
+      <div class="section-label">KPI health — this week</div>
+      <div class="g4" id="kpi-row" style="margin-bottom:1.5rem"></div>
+    </div>
+    <div class="section">
+      <div class="section-label">Full metrics table</div>
+      <div class="chart-card">
+        <table class="data-table">
+          <thead><tr><th>Area</th><th>Metric</th><th>This week</th><th>Target</th><th>Status</th><th>Notes</th></tr></thead>
+          <tbody id="metrics-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: FUNNEL -->
+  <div id="tab-funnel" style="display:none">
+    <div class="section">
+      <div class="section-label">Earn → Swap → Lock conversion</div>
+      <div class="chart-card" style="margin-bottom:10px">
+        <div class="chart-title">Conversion rates vs targets — last 7 days</div>
+        <div id="funnel-bars"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-label">User activity trends</div>
+      <div class="g2" style="margin-bottom:10px">
+        <div class="chart-card">
+          <div class="chart-title">Daily active users (last 30 days)</div>
+          <div style="position:relative;width:100%;height:180px"><canvas id="dau-chart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Weekly active users (last 12 weeks)</div>
+          <div style="position:relative;width:100%;height:180px"><canvas id="wau-chart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-label">Retention & reliability</div>
+      <div class="g2" style="margin-bottom:10px">
+        <div class="chart-card">
+          <div class="chart-title">Lock cohort retention</div>
+          <div style="position:relative;width:100%;height:180px"><canvas id="retention-chart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Execution reliability rates</div>
+          <div style="position:relative;width:100%;height:180px"><canvas id="reliability-chart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-label">Referring domains — last 14 days</div>
+      <div class="chart-card">
+        <div style="position:relative;width:100%;height:260px"><canvas id="referrers-chart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: ON-CHAIN -->
+  <div id="tab-chain" style="display:none">
+    <div class="section">
+      <div class="section-label">Core product token supply — live · <span id="supply-chain-label">Monad</span></div>
+      <div class="token-grid" id="token-grid-core" style="margin-bottom:16px">
+        <div class="loading-row"><span class="spinner"></span>Fetching…</div>
+      </div>
+      <div class="section-label">LP & integration token supply</div>
+      <div class="token-grid" id="token-grid-lp">
+        <div class="loading-row"><span class="spinner"></span>Fetching…</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-label">TVL trend — 8-week rolling</div>
+      <div class="chart-card">
+        <div class="chart-title">Committed TVL ($M) — mock baseline · connect Alchemy for live</div>
+        <div style="position:relative;width:100%;height:200px"><canvas id="tvl-chart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: WHALES -->
+  <div id="tab-whales" style="display:none">
+    <div class="section">
+      <div class="section-label">Whale leaderboard — <span id="whale-chain-label">Monad · AZND top holders</span></div>
+      <div class="chart-card" style="margin-bottom:10px">
+        <table class="data-table" id="whale-table">
+          <thead><tr><th>#</th><th>Address</th><th>AZND balance</th><th>TVL share (est.)</th><th>Stage</th></tr></thead>
+          <tbody id="whale-body"><tr><td colspan="5" class="loading-row"><span class="spinner"></span>Loading…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section">
+      <div class="g2">
+        <div class="chart-card">
+          <div class="chart-title">TVL concentration by whale tier</div>
+          <div style="position:relative;width:100%;height:200px"><canvas id="whale-donut"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Whale pipeline</div>
+          <div style="position:relative;width:100%;height:200px"><canvas id="whale-funnel-chart"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: SHIPPING -->
+  <div id="tab-shipping" style="display:none">
+    <div class="section">
+      <div class="section-label">Shipping velocity</div>
+      <div class="g4" style="margin-bottom:1.5rem">
+        <div class="kpi-card"><div class="kpi-label">Median feedback→ship</div><div class="kpi-val">10<span style="font-size:14px">d</span></div><div class="kpi-sub up">✓ target ≤10d</div></div>
+        <div class="kpi-card"><div class="kpi-label">P90 feedback→ship</div><div class="kpi-val">21<span style="font-size:14px">d</span></div><div class="kpi-sub up">✓ target ≤21d</div></div>
+        <div class="kpi-card"><div class="kpi-label">Weekly improvements</div><div class="kpi-val warn" style="font-size:16px;padding-top:4px">[need]</div><div class="kpi-sub warn">target ≥1/week</div></div>
+        <div class="kpi-card"><div class="kpi-label">Feedback cadence</div><div class="kpi-val warn" style="font-size:14px;padding-top:6px">partial</div><div class="kpi-sub warn">SOP not set yet</div></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-label">Release log</div>
+      <div class="chart-card" style="margin-bottom:16px">
+        <table class="data-table">
+          <thead><tr><th>Date</th><th>Release</th><th>Tied metric</th><th>Outcome</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Mar 2025</td><td>Points Program Launch</td><td>Earn→Swap</td><td>Positive engagement signal</td><td><span class="badge badge-g">shipped</span></td></tr>
+            <tr><td>Mar 2025</td><td>UX enhancements</td><td>Lock success rate</td><td>96% — tightening needed</td><td><span class="badge badge-a">monitoring</span></td></tr>
+            <tr><td>Q2 2025</td><td>Whale identification module</td><td>Whale TVL share</td><td>Target 35%+</td><td><span class="badge badge-n">planned</span></td></tr>
+            <tr><td>Q2 2025</td><td>Funnel instrumentation</td><td>All funnel metrics</td><td>Close instrumentation gap</td><td><span class="badge badge-n">planned</span></td></tr>
+            <tr><td>Q3 2025</td><td>ETH Mainnet expansion</td><td>TVL, whale share</td><td>Dual-chain protocol launch</td><td><span class="badge badge-n">roadmap</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-label">Cross-team asks</div>
+      <div class="g3">
+        <div class="kpi-card"><div class="kpi-label" style="color:var(--gold)">Engineering</div><div style="font-size:12px;font-family:var(--font-data);color:var(--text);margin-top:8px;line-height:1.7">Weekly 30–45 min triage slot. Small weekly release train. Instrument earn_start / swap_initiated / lock_completed PostHog events.</div></div>
+        <div class="kpi-card"><div class="kpi-label" style="color:var(--gold)">Marketing</div><div style="font-size:12px;font-family:var(--font-data);color:var(--text);margin-top:8px;line-height:1.7">Weekly UA experiments each tied to one funnel metric. GTM readiness for ETH Mainnet launch.</div></div>
+        <div class="kpi-card"><div class="kpi-label" style="color:var(--gold)">Community</div><div style="font-size:12px;font-family:var(--font-data);color:var(--text);margin-top:8px;line-height:1.7">Feedback intake cadence. User pulse surveys. Whale outreach coordination with Sales.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: CONTRACTS -->
+  <div id="tab-contracts" style="display:none">
+    <div class="section">
+      <div class="section-label">Contract registry — all chains</div>
+      <div class="config-note">
+        Monad contracts are live and queried every hour. ETH Mainnet core contracts pre-wired.
+        Integration contracts will be added when confirmed — drop them in <code>collector/collect.js → CONFIG.eth.contracts</code>.
+      </div>
+      <div class="chart-card">
+        <table class="data-table" id="contract-table">
+          <thead><tr><th>Token</th><th>Type</th><th>Chain</th><th>Address</th><th>Status</th></tr></thead>
+          <tbody id="contract-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /shell -->
+
+<script>
+// ─── CONTRACT REGISTRY ─────────────────────────────────────────────────────
+const CONTRACTS = {
+  monad: {
+    explorer: 'https://monadscan.com',
+    contracts: {
+      AZND:        { addr: '0x4917a5ec9fcb5e10f47cbb197abe6ab63be81fe8', type: 'core', desc: 'Asia Dollar' },
+      MUBOND:      { addr: '0x336d414754967c6682b5a665c7daf6f1409e63e8', type: 'core', desc: 'mu Bond' },
+      LOAZND:      { addr: '0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90', type: 'core', desc: 'Locked AZND' },
+      CLOAZND:     { addr: '0xf7a6ab4af86966c141d3c5633df658e5cdb0a735', type: 'lp',   desc: 'Compounding loAZND' },
+      CMUBOND:     { addr: '0x92ee4b4d33dc61bd93a88601f29131b08acedbf1', type: 'lp',   desc: 'Compounding muBOND' },
+      NLOAZND:     { addr: '0x293e2f01a38fe690eb8e570ab952b24b225113a7', type: 'lp',   desc: 'Native loAZND' },
+      MTUSD:       { addr: '0x0da39b740834090c146dc48357f6a435a1bb33b3', type: 'lp',   desc: 'mtUSD' },
+      AZNDAUSD:    { addr: '0x2d84d79c852f6842abe0304b70bbaa1506add457', type: 'lp',   desc: 'AZND/AUSD LP' },
+      MUBONDAUSD:  { addr: '0x1e8d78e9b3f0152d54d32904b7933f1cfe439df1', type: 'lp',   desc: 'muBOND/AUSD LP' },
+      LOAZNDAZND:  { addr: '0x269b47978f4348c96f521658ef452ff85906fcfe', type: 'lp',   desc: 'loAZND/AZND LP' },
+      SBMU:        { addr: '0x4c0d041889281531ff060290d71091401caa786d', type: 'lp',   desc: 'sbMU' },
+    }
+  },
+  eth: {
+    explorer: 'https://etherscan.io',
+    contracts: {
+      AZND:   { addr: '0x52c66B5E7f8Fde20843De900C5C8B4b0F23708A0', type: 'core', desc: 'Asia Dollar (OFT)' },
+      MUBOND: { addr: '0x09AD9c6DcadCc3aB0b3E107E8E7DA69c2eEa8599', type: 'core', desc: 'mu Bond (OFT)' },
+      LOAZND: { addr: '0xa6142276526724CFaEe9151d280385BdF43e0503', type: 'core', desc: 'Locked AZND' },
+    }
+  }
+};
+
+const METRICS = [
+  {area:'TVL',    metric:'Net new committed TVL WoW %', val:'$12.4M', target:'+3% WoW avg', status:'g', notes:'Protect against bleed'},
+  {area:'Funnel', metric:'Earn → Swap',                 val:'18%',    target:'20%+',         status:'a', notes:'Biggest lever'},
+  {area:'Funnel', metric:'Swap → Lock',                 val:'35%',    target:'38%+',         status:'a', notes:'Near commitment'},
+  {area:'Funnel', metric:'Earn → Lock overall',         val:'6%',     target:'7%+',          status:'a', notes:'Compounding metric'},
+  {area:'Reliability', metric:'Swap success rate',      val:'97%',    target:'97%+',         status:'g', notes:'Trust anchor'},
+  {area:'Reliability', metric:'Lock success rate',      val:'96%',    target:'97%+',         status:'a', notes:'Needs tightening'},
+  {area:'Reliability', metric:'Swap + Lock combined',   val:'93%',    target:'94%+',         status:'a', notes:'Compounded'},
+  {area:'Retention', metric:'D7 lock cohort',           val:'35%',    target:'35%+',         status:'g', notes:'Early signal'},
+  {area:'Retention', metric:'D30 lock cohort',          val:'22%',    target:'22%+',         status:'g', notes:'Longer signal'},
+  {area:'Shipping', metric:'Median feedback→ship',      val:'10 days',target:'≤10 days',     status:'g', notes:'Cycle time'},
+  {area:'Shipping', metric:'P90 feedback→ship',         val:'21 days',target:'≤21 days',     status:'g', notes:'90% rule'},
+  {area:'Shipping', metric:'Weekly improvements',       val:'[need]', target:'≥1/week',      status:'n', notes:'Funnel or trust'},
+  {area:'Whales', metric:'Identified & tracked',        val:'200',    target:'grow WoW',     status:'g', notes:'Pipeline top'},
+  {area:'Whales', metric:'Engaged monitoring',          val:'60',     target:'expand',       status:'a', notes:'Coverage lever'},
+  {area:'Whales', metric:'Converted to action',         val:'12',     target:'increase WoW', status:'a', notes:'Conversion lever'},
+  {area:'Whales', metric:'Whale TVL share',             val:'30%',    target:'35%',          status:'a', notes:'Concentration risk'},
+];
+
+// ─── STATE ──────────────────────────────────────────────────────────────────
+let activeChain = 'monad';
+let dashData = null;
+const charts = {};
+
+// ─── DATA LOADING ────────────────────────────────────────────────────────────
+async function loadData() {
+  const banner = document.getElementById('chain-banner');
+  banner.className = 'chain-banner banner-loading';
+  banner.innerHTML = '<span><span class="spinner"></span>Fetching latest data…</span>';
+
+  try {
+    // Try loading from the generated data file first
+    const res = await fetch('./data/dashboard-data.json?t=' + Date.now());
+    if (res.ok) {
+      dashData = await res.json();
+      const age = dashData.collectedAt
+        ? 'Data collected ' + new Date(dashData.collectedAt).toLocaleString()
+        : '';
+      banner.className = 'chain-banner banner-monad';
+      banner.innerHTML = `<span>◆ Connected · Monad Testnet · ETH pre-wired</span><span class="data-age">${age}</span>`;
+    } else {
+      throw new Error('data file not found');
+    }
+  } catch {
+    // Fall back to live RPC for token supplies if no data file yet
+    banner.className = 'chain-banner banner-monad';
+    banner.innerHTML = `<span>◆ Monad Testnet · Live RPC · <em style="color:var(--amber)">Run collector to enable full data</em></span>`;
+    dashData = null;
+  }
+
+  render();
+  updateTs();
+}
+
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+function render() {
+  renderKPIs();
+  renderMetrics();
+  renderFunnel();
+  renderChains();
+  renderWhales();
+  renderContracts();
+  renderCharts();
+}
+
+function ragBadge(s) {
+  const cls = s==='g'?'badge-g':s==='a'?'badge-a':s==='r'?'badge-r':'badge-n';
+  const lbl = s==='g'?'on track':s==='a'?'watch':s==='r'?'off track':'need';
+  return `<span class="badge ${cls}">${lbl}</span>`;
+}
+
+function renderKPIs() {
+  const ph = dashData?.posthog;
+  const kpis = [
+    {label:'Committed TVL',  val:'$12.4M',  sub:'+3.2% WoW', s:'g'},
+    {label:'DAU (latest)',    val: ph?.dauLatest != null ? ph.dauLatest.toLocaleString() : '[live]', sub:'last 30 days', s: ph?.dauLatest > 50 ? 'g' : 'a'},
+    {label:'WAU (latest)',    val: ph?.wauLatest != null ? ph.wauLatest.toLocaleString() : '[live]', sub:'last 12 weeks', s: ph?.wauLatest > 200 ? 'g' : 'a'},
+    {label:'Earn→Lock',       val:'6%',       sub:'target 7%+', s:'a'},
+    {label:'Swap success',    val:'97%',      sub:'at target',  s:'g'},
+    {label:'D30 retention',   val:'22%',      sub:'at target',  s:'g'},
+    {label:'Whale TVL share', val:'30%',      sub:'target 35%', s:'a'},
+    {label:'Shipping',        val:'10d',      sub:'at target',  s:'g'},
+  ];
+  document.getElementById('kpi-row').innerHTML = kpis.map(k => `
+    <div class="kpi-card">
+      <div class="kpi-label">${k.label}</div>
+      <div class="kpi-val">${k.val}</div>
+      <div class="kpi-sub ${k.s==='g'?'up':k.s==='a'?'warn':'dn'}">${k.sub}</div>
+    </div>`).join('');
+}
+
+function renderMetrics() {
+  let last = '';
+  document.getElementById('metrics-body').innerHTML = METRICS.map(m => {
+    const ac = m.area !== last
+      ? `<td style="font-family:var(--font-data);font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--text3)">${m.area}</td>`
+      : '<td></td>';
+    last = m.area;
+    return `<tr>${ac}<td>${m.metric}</td><td style="font-weight:500">${m.val}</td><td style="color:var(--text3)">${m.target}</td><td>${ragBadge(m.status)}</td><td style="color:var(--text3)">${m.notes}</td></tr>`;
+  }).join('');
+}
+
+function renderFunnel() {
+  const ph = dashData?.posthog?.funnel?.last7Days;
+  const steps = ph?.instrumented ? [
+    {label:'Earn → Swap', val: ph.earnToSwapPct, target:20, color:'#1D9E75'},
+    {label:'Swap → Lock', val: ph.swapToLockPct, target:38, color:'#C9A84C'},
+    {label:'Earn → Lock', val: ph.earnToLockPct, target:7,  color:'#378ADD'},
+  ] : [
+    {label:'Earn → Swap', val:18, target:20, color:'#1D9E75'},
+    {label:'Swap → Lock', val:35, target:38, color:'#C9A84C'},
+    {label:'Earn → Lock', val:6,  target:7,  color:'#378ADD'},
+  ];
+
+  const note = ph?.instrumented ? '' : `
+    <div class="no-data" style="margin-bottom:14px">
+      Funnel events not yet instrumented — showing baseline data.<br>
+      Engineering task: fire <code style="color:var(--gold)">earn_start</code>, <code style="color:var(--gold)">swap_initiated</code>, <code style="color:var(--gold)">lock_completed</code> PostHog events.
+    </div>`;
+
+  document.getElementById('funnel-bars').innerHTML = note + steps.map(s => `
+    <div class="funnel-row">
+      <div class="funnel-label">${s.label}</div>
+      <div class="funnel-track">
+        <div class="funnel-fill" style="width:${Math.min((s.val||0)/s.target*100,100)}%;background:${s.color}25;border-right:2px solid ${s.color}80"></div>
+      </div>
+      <div class="funnel-pct">${s.val != null ? s.val+'%' : '—'}</div>
+      <div class="funnel-target">${s.target}%+</div>
+    </div>`).join('');
+}
+
+function renderChains() {
+  const chainData = dashData?.onchain?.[activeChain] || {};
+  const explorerBase = CONTRACTS[activeChain]?.explorer || '';
+  const contracts = CONTRACTS[activeChain]?.contracts || {};
+  const core = ['AZND','MUBOND','LOAZND'];
+  const lp = Object.keys(contracts).filter(k => !core.includes(k));
+
+  function makeTokenCard(sym) {
+    const meta = contracts[sym];
+    if (!meta) return '';
+    const live = chainData[sym];
+    const supply = live?.supply != null ? live.supply.toLocaleString() : '—';
+    return `
+      <div class="token-card ${meta.type==='core'?'core':''}">
+        ${meta.type==='core'?'<div class="core-pip"></div>':''}
+        <div class="token-sym">${sym}</div>
+        <div class="token-desc">${meta.desc}</div>
+        <div class="token-supply">${supply}</div>
+        <div class="token-addr"><a href="${explorerBase}/address/${meta.addr}" target="_blank">${meta.addr.slice(0,8)}…${meta.addr.slice(-6)}</a></div>
+      </div>`;
+  }
+
+  document.getElementById('token-grid-core').innerHTML = core.map(makeTokenCard).join('') || '<div class="loading-row">No core contracts</div>';
+  document.getElementById('token-grid-lp').innerHTML = lp.length ? lp.map(makeTokenCard).join('') : '<div class="no-data">No LP/integration contracts yet for this chain</div>';
+  document.getElementById('supply-chain-label').textContent = activeChain === 'monad' ? 'Monad Testnet' : 'Ethereum Mainnet';
+}
+
+function renderWhales() {
+  const whales = dashData?.whales?.[activeChain] || [];
+  const explorerBase = CONTRACTS[activeChain]?.explorer || '';
+  document.getElementById('whale-chain-label').textContent = activeChain === 'monad' ? 'Monad · AZND top holders' : 'Ethereum · AZND top holders';
+
+  if (whales.length === 0) {
+    document.getElementById('whale-body').innerHTML = `
+      <tr><td colspan="5" class="loading-row">
+        ${dashData ? 'No whale data yet — add MONADSCAN_API_KEY to GitHub Secrets' : '<span class="spinner"></span>Loading…'}
+      </td></tr>`;
+    return;
+  }
+
+  document.getElementById('whale-body').innerHTML = whales.slice(0,15).map((w,i) => {
+    const pct = w.azndBalance > 0 ? (w.azndBalance / 12400000 * 100).toFixed(2) : '—';
+    const stage = i < 2 ? '<span class="badge badge-g">converted</span>' : i < 5 ? '<span class="badge badge-a">monitored</span>' : '<span class="badge badge-n">identified</span>';
+    return `<tr>
+      <td style="color:var(--text3)">${w.rank}</td>
+      <td><a href="${explorerBase}/address/${w.address}" target="_blank">${w.address.slice(0,8)}…${w.address.slice(-6)}</a></td>
+      <td>${w.azndBalance.toLocaleString()}</td>
+      <td>${pct}%</td>
+      <td>${stage}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderContracts() {
+  const rows = [];
+  for (const [chain, data] of Object.entries(CONTRACTS)) {
+    for (const [sym, c] of Object.entries(data.contracts)) {
+      const isActive = chain === activeChain;
+      rows.push(`<tr style="${!isActive?'opacity:0.45':''}">
+        <td style="font-weight:500">${sym}</td>
+        <td><span class="badge ${c.type==='core'?'badge-g':'badge-n'}">${c.type}</span></td>
+        <td><span class="${chain==='monad'?'pill-monad':'pill-eth'}">${chain==='monad'?'◆ Monad':'⬡ ETH'}</span></td>
+        <td><a href="${data.explorer}/address/${c.addr}" target="_blank">${c.addr.slice(0,10)}…${c.addr.slice(-8)}</a></td>
+        <td><span class="badge ${isActive?'badge-g':'badge-n'}">${isActive?'active':'dormant'}</span></td>
+      </tr>`);
+    }
+  }
+  // ETH integration contracts placeholder
+  rows.push(`<tr style="opacity:0.35"><td colspan="5" style="font-family:var(--font-data);font-size:11px;color:var(--text3);padding:10px">ETH integration contracts — to be added</td></tr>`);
+  document.getElementById('contract-body').innerHTML = rows.join('');
+}
+
+// ─── CHARTS ──────────────────────────────────────────────────────────────────
+function destroyChart(id) { if(charts[id]){charts[id].destroy();delete charts[id];} }
+
+function renderCharts() {
+  const gc = 'rgba(255,255,255,0.05)';
+  const tc = '#5A5855';
+  const base = {responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc},ticks:{color:tc,font:{size:10}}},y:{grid:{color:gc},ticks:{color:tc,font:{size:10}}}}};
+
+  // DAU from live data or mock
+  const ph = dashData?.posthog;
+  const dauData = ph?.dau?.slice().reverse() || [];
+  const dauLabels = dauData.map(d => d.date?.slice(5) || '');
+  const dauValues = dauData.map(d => d.value);
+
+  destroyChart('dau');
+  charts.dau = new Chart(document.getElementById('dau-chart'), {type:'line',
+    data:{labels: dauLabels.length ? dauLabels : ['Feb 21','Feb 24','Feb 27','Mar 2','Mar 5','Mar 8','Mar 11','Mar 14','Mar 17','Mar 20','Mar 23'],
+          datasets:[{data: dauValues.length ? dauValues : [180,95,65,70,45,65,40,55,45,35,20],
+            borderColor:'#1D9E75',backgroundColor:'rgba(29,158,117,.08)',fill:true,tension:.4,pointRadius:2,pointBackgroundColor:'#1D9E75'}]},
+    options:{...base,scales:{...base.scales,y:{...base.scales.y,ticks:{color:tc,font:{size:10}}}}}
+  });
+
+  // WAU
+  const wauData = ph?.wau?.slice().reverse() || [];
+  destroyChart('wau');
+  charts.wau = new Chart(document.getElementById('wau-chart'), {type:'line',
+    data:{labels: wauData.map(d=>d.week?.slice(5)||'') || ['Nov','Dec','Jan','Feb','Mar'],
+          datasets:[{data: wauData.map(d=>d.value) || [220,250,300,460,200],
+            borderColor:'#C9A84C',backgroundColor:'rgba(201,168,76,.08)',fill:true,tension:.4,pointRadius:3,pointBackgroundColor:'#C9A84C'}]},
+    options:{...base}
+  });
+
+  // Retention
+  destroyChart('ret');
+  charts.ret = new Chart(document.getElementById('retention-chart'), {type:'bar',
+    data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8'],datasets:[
+      {label:'D7',  data:[38,36,37,35,36,35,35,35],backgroundColor:'#1D9E75',borderRadius:3},
+      {label:'D30', data:[24,23,22,22,23,22,22,22],backgroundColor:'#C9A84C',borderRadius:3}
+    ]},
+    options:{...base,scales:{...base.scales,y:{...base.scales.y,ticks:{color:tc,font:{size:10},callback:v=>v+'%'}}}}
+  });
+
+  // Reliability
+  destroyChart('rel');
+  charts.rel = new Chart(document.getElementById('reliability-chart'), {type:'line',
+    data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8'],datasets:[
+      {label:'Swap',     data:[96,97,97,96,97,97,97,97],borderColor:'#1D9E75',backgroundColor:'transparent',tension:.3,pointRadius:2},
+      {label:'Lock',     data:[95,96,95,96,96,97,96,96],borderColor:'#C9A84C',backgroundColor:'transparent',tension:.3,pointRadius:2},
+      {label:'Combined', data:[91,93,92,93,93,94,93,93],borderColor:'#378ADD',backgroundColor:'transparent',tension:.3,pointRadius:2}
+    ]},
+    options:{...base,scales:{...base.scales,y:{...base.scales.y,min:88,max:100,ticks:{color:tc,font:{size:10},callback:v=>v+'%'}}}}
+  });
+
+  // Referrers
+  const refs = ph?.referringDomains || [
+    {domain:'$direct',value:200},{domain:'mudigital.net',value:160},
+    {domain:'app.layer3.xyz',value:20},{domain:'google.com',value:18},
+    {domain:'discord.com',value:8},{domain:'github.com',value:5}
+  ];
+  destroyChart('ref');
+  charts.ref = new Chart(document.getElementById('referrers-chart'), {type:'bar',
+    data:{labels:refs.map(r=>r.domain),datasets:[{data:refs.map(r=>r.users||r.value),backgroundColor:'#378ADD80',borderRadius:3}]},
+    options:{...base,indexAxis:'y',scales:{x:{grid:{color:gc},ticks:{color:tc,font:{size:10}}},y:{grid:{color:gc},ticks:{color:tc,font:{size:10}}}}}
+  });
+
+  // TVL
+  destroyChart('tvl');
+  charts.tvl = new Chart(document.getElementById('tvl-chart'), {type:'line',
+    data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8'],datasets:[
+      {data:[8.2,9.1,9.8,10.4,11.0,11.6,12.1,12.4],borderColor:'#C9A84C',backgroundColor:'rgba(201,168,76,.08)',fill:true,tension:.4,pointRadius:4,pointBackgroundColor:'#C9A84C'}
+    ]},
+    options:{...base,scales:{...base.scales,y:{...base.scales.y,ticks:{color:tc,font:{size:10},callback:v=>'$'+v+'M'}}}}
+  });
+
+  // Whale donut
+  destroyChart('wd');
+  charts.wd = new Chart(document.getElementById('whale-donut'), {type:'doughnut',
+    data:{labels:['Converted (12)','Monitored (48)','Identified (140)','Rest'],
+          datasets:[{data:[30,18,12,40],backgroundColor:['#C9A84C','#1D9E75','#378ADD','#2A2A2A'],borderWidth:0,hoverOffset:4}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{display:false}}}
+  });
+
+  // Whale pipeline
+  destroyChart('wf');
+  charts.wf = new Chart(document.getElementById('whale-funnel-chart'), {type:'bar',
+    data:{labels:['Identified','Monitored','Converted'],datasets:[{data:[200,60,12],backgroundColor:['#378ADD','#C9A84C','#1D9E75'],borderRadius:4}]},
+    options:{...base,indexAxis:'y'}
+  });
+}
+
+// ─── UI HELPERS ───────────────────────────────────────────────────────────────
+function switchChain(c) {
+  activeChain = c;
+  document.getElementById('btn-monad').className = 'chain-btn' + (c==='monad'?' active-monad':'');
+  document.getElementById('btn-eth').className   = 'chain-btn' + (c==='eth'?' active-eth':' soon');
+  if (c==='monad') {
+    document.getElementById('live-dot').style.background = 'var(--jade)';
+    document.getElementById('live-label').style.color = 'var(--jade)';
+    document.getElementById('live-label').textContent = 'monad live';
+    document.getElementById('chain-banner').className = 'chain-banner banner-monad';
+  } else {
+    document.getElementById('live-dot').style.background = '#627EEA';
+    document.getElementById('live-label').style.color = '#818CF8';
+    document.getElementById('live-label').textContent = 'eth mainnet';
+    document.getElementById('chain-banner').className = 'chain-banner banner-eth';
+  }
+  renderChains();
+  renderWhales();
+  renderContracts();
+}
+
+function showTab(name) {
+  ['overview','funnel','chain','whales','shipping','contracts'].forEach(t => {
+    document.getElementById('tab-'+t).style.display = t===name ? 'block' : 'none';
+  });
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    b.classList.toggle('active', ['overview','funnel','chain','whales','shipping','contracts'][i] === name);
+  });
+}
+
+function updateTs() {
+  document.getElementById('ts').textContent = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+loadData();
+setInterval(updateTs, 1000);
+setInterval(loadData, 5 * 60 * 1000); // auto-refresh every 5 min
+</script>
+</body>
+</html>
