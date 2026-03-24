@@ -1,0 +1,14 @@
+{
+  "name": "mu-digital-collector",
+  "version": "2.0.0",
+  "description": "Automated data collector for Mu Digital ops dashboard",
+  "type": "module",
+  "main": "collect.js",
+  "scripts": {
+    "collect": "node collect.js",
+    "test": "node collect.js --dry-run"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
