@@ -1,0 +1,23 @@
+{
+  "snapshots": [
+    {
+      "date": "2026-03-27",
+      "monadSupplies": {
+        "CMUBOND": 637383,
+        "NLOAZND": 295045,
+        "MTUSD": 13855,
+        "AZNDAUSD": 518689,
+        "AZND": 10490875,
+        "MUBOND": 2283428,
+        "LOAZNDAZND": 501,
+        "CLOAZND": 521826,
+        "LOAZND": 822856,
+        "MUBONDAUSD": 240528,
+        "SBMU": 16684
+      },
+      "ethSupplies": {},
+      "dauLatest": 48,
+      "wauLatest": 351
+    }
+  ]
+}
