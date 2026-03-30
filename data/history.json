@@ -5,6 +5,27 @@
       "tvl": 12849364.44,
       "azndApy": 7.51,
       "mubondApy": 12.55,
+      "dauLatest": 30,
+      "wauLatest": 139,
+      "monadSupplies": {
+        "AZND": 10490875,
+        "CLOAZND": 521663,
+        "MUBOND": 2283428,
+        "LOAZND": 814026,
+        "CMUBOND": 630794,
+        "MUBONDAUSD": 240528,
+        "MTUSD": 13855,
+        "NLOAZND": 286596,
+        "LOAZNDAZND": 501,
+        "SBMU": 16684,
+        "AZNDAUSD": 518689
+      }
+    },
+    {
+      "date": "2026-03-30",
+      "tvl": 12849364.44,
+      "azndApy": 7.51,
+      "mubondApy": 12.55,
       "dauLatest": 28,
       "wauLatest": 137,
       "monadSupplies": {
