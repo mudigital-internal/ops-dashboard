@@ -1,6 +1,27 @@
 {
   "snapshots": [
     {
+      "date": "2026-03-30",
+      "tvl": 12849364.44,
+      "azndApy": 7.51,
+      "mubondApy": 12.55,
+      "dauLatest": 29,
+      "wauLatest": 29,
+      "monadSupplies": {
+        "AZND": 10490875,
+        "LOAZND": 814001,
+        "CLOAZND": 521662,
+        "MUBOND": 2283428,
+        "CMUBOND": 630793,
+        "NLOAZND": 286570,
+        "AZNDAUSD": 518689,
+        "MUBONDAUSD": 240528,
+        "MTUSD": 13855,
+        "SBMU": 16684,
+        "LOAZNDAZND": 501
+      }
+    },
+    {
       "date": "2026-03-29",
       "tvl": 12848554.04,
       "azndApy": 7.51,
