@@ -1,555 +1,555 @@
 {
-  "collectedAt": "2026-05-25T02:34:45.338Z",
+  "collectedAt": "2026-05-25T07:03:38.617Z",
   "muApp": {
     "tvl": {
       "current": 6564875.99,
       "aznd": 6564875.99,
-      "mubond": null,
-      "wowDeltaPct": -0.55,
-      "wowDeltaAbs": -36000,
+      "mubond": 0,
+      "wowDeltaPct": -66.25,
+      "wowDeltaAbs": -12884929.41,
       "history": [
         {
           "date": "2026-02-25",
           "aznd": 10211980.74,
-          "mubond": null,
-          "total": 10211980.74
+          "mubond": 2229987.69,
+          "total": 12441968.43
         },
         {
           "date": "2026-02-26",
           "aznd": 10224625.01,
-          "mubond": null,
-          "total": 10224625.01
+          "mubond": 2235202.44,
+          "total": 12459827.45
         },
         {
           "date": "2026-02-27",
           "aznd": 10224625.01,
-          "mubond": null,
-          "total": 10224625.01
+          "mubond": 2235202.44,
+          "total": 12459827.45
         },
         {
           "date": "2026-02-28",
           "aznd": 10224625.01,
-          "mubond": null,
-          "total": 10224625.01
+          "mubond": 2235202.44,
+          "total": 12459827.45
         },
         {
           "date": "2026-03-01",
           "aznd": 10224625.01,
-          "mubond": null,
-          "total": 10224625.01
+          "mubond": 2235202.44,
+          "total": 12459827.45
         },
         {
           "date": "2026-03-02",
           "aznd": 10224625.01,
-          "mubond": null,
-          "total": 10224625.01
+          "mubond": 2235202.44,
+          "total": 12459827.45
         },
         {
           "date": "2026-03-03",
           "aznd": 10224625.01,
-          "mubond": null,
-          "total": 10224625.01
+          "mubond": 2235202.44,
+          "total": 12459827.45
         },
         {
           "date": "2026-03-04",
           "aznd": 10224625.01,
-          "mubond": null,
-          "total": 10224625.01
+          "mubond": 2235202.44,
+          "total": 12459827.45
         },
         {
           "date": "2026-03-05",
           "aznd": 10235122.1,
-          "mubond": null,
-          "total": 10235122.1
+          "mubond": 2240701.47,
+          "total": 12475823.57
         },
         {
           "date": "2026-03-06",
           "aznd": 10235122.1,
-          "mubond": null,
-          "total": 10235122.1
+          "mubond": 2240701.47,
+          "total": 12475823.57
         },
         {
           "date": "2026-03-07",
           "aznd": 10235122.1,
-          "mubond": null,
-          "total": 10235122.1
+          "mubond": 2240701.47,
+          "total": 12475823.57
         },
         {
           "date": "2026-03-08",
           "aznd": 10235122.1,
-          "mubond": null,
-          "total": 10235122.1
+          "mubond": 2240701.47,
+          "total": 12475823.57
         },
         {
           "date": "2026-03-09",
           "aznd": 10235122.1,
-          "mubond": null,
-          "total": 10235122.1
+          "mubond": 2240701.47,
+          "total": 12475823.57
         },
         {
           "date": "2026-03-10",
           "aznd": 10335122.1,
-          "mubond": null,
-          "total": 10335122.1
+          "mubond": 2343324.56,
+          "total": 12678446.66
         },
         {
           "date": "2026-03-11",
           "aznd": 10335122.1,
-          "mubond": null,
-          "total": 10335122.1
+          "mubond": 2343324.56,
+          "total": 12678446.66
         },
         {
           "date": "2026-03-12",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2344131.1,
+          "total": 12835007.09
         },
         {
           "date": "2026-03-13",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2344131.1,
+          "total": 12835007.09
         },
         {
           "date": "2026-03-14",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2345745.01,
+          "total": 12836621
         },
         {
           "date": "2026-03-15",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2346552.38,
+          "total": 12837428.37
         },
         {
           "date": "2026-03-16",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2347360.04,
+          "total": 12838236.03
         },
         {
           "date": "2026-03-17",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2348167.97,
+          "total": 12839043.96
         },
         {
           "date": "2026-03-18",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2348976.17,
+          "total": 12839852.16
         },
         {
           "date": "2026-03-19",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2349755.84,
+          "total": 12840631.83
         },
         {
           "date": "2026-03-20",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2350535.76,
+          "total": 12841411.75
         },
         {
           "date": "2026-03-21",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2350535.76,
+          "total": 12841411.75
         },
         {
           "date": "2026-03-22",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2352096.38,
+          "total": 12842972.37
         },
         {
           "date": "2026-03-23",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2352877.08,
+          "total": 12843753.07
         },
         {
           "date": "2026-03-24",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2353658.03,
+          "total": 12844534.02
         },
         {
           "date": "2026-03-25",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2354439.25,
+          "total": 12845315.24
         },
         {
           "date": "2026-03-26",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2355248.53,
+          "total": 12846124.52
         },
         {
           "date": "2026-03-27",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2356058.1,
+          "total": 12846934.09
         },
         {
           "date": "2026-03-28",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2356867.94,
+          "total": 12847743.93
         },
         {
           "date": "2026-03-29",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2357678.05,
+          "total": 12848554.04
         },
         {
           "date": "2026-03-30",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2358488.45,
+          "total": 12849364.44
         },
         {
           "date": "2026-03-31",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2359299.13,
+          "total": 12850175.12
         },
         {
           "date": "2026-04-01",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2360110.08,
+          "total": 12850986.07
         },
         {
           "date": "2026-04-02",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2360914.61,
+          "total": 12851790.6
         },
         {
           "date": "2026-04-03",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2361719.42,
+          "total": 12852595.41
         },
         {
           "date": "2026-04-04",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2362524.5,
+          "total": 12853400.49
         },
         {
           "date": "2026-04-05",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2363329.85,
+          "total": 12854205.84
         },
         {
           "date": "2026-04-06",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2364135.48,
+          "total": 12855011.47
         },
         {
           "date": "2026-04-07",
           "aznd": 10490875.99,
-          "mubond": null,
-          "total": 10490875.99
+          "mubond": 2364941.38,
+          "total": 12855817.37
         },
         {
           "date": "2026-04-08",
           "aznd": 9990875.99,
-          "mubond": null,
-          "total": 9990875.99
+          "mubond": 2365747.56,
+          "total": 12356623.55
         },
         {
           "date": "2026-04-09",
           "aznd": 9800875.99,
-          "mubond": null,
-          "total": 9800875.99
+          "mubond": 2366470.91,
+          "total": 12167346.9
         },
         {
           "date": "2026-04-10",
           "aznd": 8400875.99,
-          "mubond": null,
-          "total": 8400875.99
+          "mubond": 2367194.49,
+          "total": 10768070.48
         },
         {
           "date": "2026-04-11",
           "aznd": 8400875.99,
-          "mubond": null,
-          "total": 8400875.99
+          "mubond": 2596058.58,
+          "total": 10996934.57
         },
         {
           "date": "2026-04-12",
           "aznd": 8400875.99,
-          "mubond": null,
-          "total": 8400875.99
+          "mubond": 2596852.36,
+          "total": 10997728.35
         },
         {
           "date": "2026-04-13",
           "aznd": 8400875.99,
-          "mubond": null,
-          "total": 8400875.99
+          "mubond": 2597646.37,
+          "total": 10998522.36
         },
         {
           "date": "2026-04-14",
           "aznd": 8400875.99,
-          "mubond": null,
-          "total": 8400875.99
+          "mubond": 2598440.63,
+          "total": 10999316.62
         },
         {
           "date": "2026-04-15",
           "aznd": 8400875.99,
-          "mubond": null,
-          "total": 8400875.99
+          "mubond": 2599235.13,
+          "total": 11000111.12
         },
         {
           "date": "2026-04-16",
           "aznd": 8400875.99,
-          "mubond": null,
-          "total": 8400875.99
+          "mubond": 3119294.27,
+          "total": 11520170.26
         },
         {
           "date": "2026-04-17",
           "aznd": 7200875.99,
-          "mubond": null,
-          "total": 7200875.99
+          "mubond": 6444652.66,
+          "total": 13645528.65
         },
         {
           "date": "2026-04-18",
           "aznd": 7200875.99,
-          "mubond": null,
-          "total": 7200875.99
+          "mubond": 7173997.74,
+          "total": 14374873.73
         },
         {
           "date": "2026-04-19",
           "aznd": 7200875.99,
-          "mubond": null,
-          "total": 7200875.99
+          "mubond": 7176123.5,
+          "total": 14376999.49
         },
         {
           "date": "2026-04-20",
           "aznd": 7200875.99,
-          "mubond": null,
-          "total": 7200875.99
+          "mubond": 7178249.88,
+          "total": 14379125.87
         },
         {
           "date": "2026-04-21",
           "aznd": 7200875.99,
-          "mubond": null,
-          "total": 7200875.99
+          "mubond": 7180376.9,
+          "total": 14381252.89
         },
         {
           "date": "2026-04-22",
           "aznd": 7200875.99,
-          "mubond": null,
-          "total": 7200875.99
+          "mubond": 7182504.54,
+          "total": 14383380.53
         },
         {
           "date": "2026-04-23",
           "aznd": 7200875.99,
-          "mubond": null,
-          "total": 7200875.99
+          "mubond": 7185525.02,
+          "total": 14386401.01
         },
         {
           "date": "2026-04-24",
           "aznd": 7200875.99,
-          "mubond": null,
-          "total": 7200875.99
+          "mubond": 7188546.77,
+          "total": 14389422.76
         },
         {
           "date": "2026-04-25",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 7191569.79,
+          "total": 13792445.78
         },
         {
           "date": "2026-04-26",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 7194594.08,
+          "total": 13795470.07
         },
         {
           "date": "2026-04-27",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 7197619.65,
+          "total": 13798495.64
         },
         {
           "date": "2026-04-28",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 7200646.48,
+          "total": 13801522.47
         },
         {
           "date": "2026-04-29",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 7203674.59,
+          "total": 13804550.58
         },
         {
           "date": "2026-04-30",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 7207688.31,
+          "total": 13808564.3
         },
         {
           "date": "2026-05-01",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 7211704.27,
+          "total": 13812580.26
         },
         {
           "date": "2026-05-02",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 7215722.47,
+          "total": 13816598.46
         },
         {
           "date": "2026-05-03",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 8265562.83,
+          "total": 14866438.82
         },
         {
           "date": "2026-05-04",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 8270168.21,
+          "total": 14871044.2
         },
         {
           "date": "2026-05-05",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 9321761.83,
+          "total": 15922637.82
         },
         {
           "date": "2026-05-06",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 10374524.73,
+          "total": 16975400.72
         },
         {
           "date": "2026-05-07",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 11427340.83,
+          "total": 18028216.82
         },
         {
           "date": "2026-05-08",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 11432590.32,
+          "total": 18033466.31
         },
         {
           "date": "2026-05-09",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 11437842.22,
+          "total": 18038718.21
         },
         {
           "date": "2026-05-10",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 11443096.54,
+          "total": 18043972.53
         },
         {
           "date": "2026-05-11",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 11448353.26,
+          "total": 18049229.25
         },
         {
           "date": "2026-05-12",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12504072.14,
+          "total": 19104948.13
         },
         {
           "date": "2026-05-13",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12509816.26,
+          "total": 19110692.25
         },
         {
           "date": "2026-05-14",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12829861.5,
+          "total": 19430737.49
         },
         {
           "date": "2026-05-15",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12834625.82,
+          "total": 19435501.81
         },
         {
           "date": "2026-05-16",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12839391.92,
+          "total": 19440267.91
         },
         {
           "date": "2026-05-17",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12844159.78,
+          "total": 19445035.77
         },
         {
           "date": "2026-05-18",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12848929.41,
+          "total": 19449805.4
         },
         {
           "date": "2026-05-19",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12853700.82,
+          "total": 19454576.81
         },
         {
           "date": "2026-05-20",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12858474,
+          "total": 19459349.99
         },
         {
           "date": "2026-05-21",
           "aznd": 6600875.99,
-          "mubond": null,
-          "total": 6600875.99
+          "mubond": 12858474,
+          "total": 19459349.99
         },
         {
           "date": "2026-05-22",
           "aznd": 6600875.99,
-          "mubond": null,
+          "mubond": 0,
           "total": 6600875.99
         },
         {
           "date": "2026-05-23",
           "aznd": 6600875.99,
-          "mubond": null,
+          "mubond": 0,
           "total": 6600875.99
         },
         {
           "date": "2026-05-24",
           "aznd": 6600875.99,
-          "mubond": null,
+          "mubond": 0,
           "total": 6600875.99
         },
         {
           "date": "2026-05-25",
           "aznd": 6564875.99,
-          "mubond": null,
+          "mubond": 0,
           "total": 6564875.99
         }
       ],
-      "fetchedAt": "2026-05-25T02:34:37.624Z"
+      "fetchedAt": "2026-05-25T07:03:34.349Z"
     },
     "loAzndPrice": {
       "current": 1.03,
@@ -672,10 +672,10 @@
         },
         {
           "date": "2026-05-25",
-          "price": 1.030581039132211
+          "price": 1.0306521279730336
         }
       ],
-      "fetchedAt": "2026-05-25T02:34:38.315Z"
+      "fetchedAt": "2026-05-25T07:03:35.158Z"
     }
   },
   "onchain": {
@@ -685,77 +685,77 @@
         "type": "core",
         "desc": "Asia Dollar",
         "supply": 6564875,
-        "fetchedAt": "2026-05-25T02:34:36.703Z"
-      },
-      "LOAZND": {
-        "address": "0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90",
-        "type": "core",
-        "desc": "Locked AZND",
-        "supply": 196159,
-        "fetchedAt": "2026-05-25T02:34:36.742Z"
-      },
-      "CLOAZND": {
-        "address": "0xf7a6ab4af86966c141d3c5633df658e5cdb0a735",
-        "type": "lp",
-        "desc": "Compounding loAZND",
-        "supply": 13125,
-        "fetchedAt": "2026-05-25T02:34:36.743Z"
+        "fetchedAt": "2026-05-25T07:03:33.442Z"
       },
       "MUBOND": {
         "address": "0x336d414754967c6682b5a665c7daf6f1409e63e8",
         "type": "core",
         "desc": "mu Bond",
         "supply": 12203428,
-        "fetchedAt": "2026-05-25T02:34:36.749Z"
+        "fetchedAt": "2026-05-25T07:03:33.466Z"
       },
-      "MTUSD": {
-        "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
-        "type": "lp",
-        "desc": "mtUSD",
-        "supply": 11519,
-        "fetchedAt": "2026-05-25T02:34:36.770Z"
-      },
-      "NLOAZND": {
-        "address": "0x293e2f01a38fe690eb8e570ab952b24b225113a7",
-        "type": "lp",
-        "desc": "Native loAZND",
-        "supply": 173033,
-        "fetchedAt": "2026-05-25T02:34:36.773Z"
-      },
-      "CMUBOND": {
-        "address": "0x92ee4b4d33dc61bd93a88601f29131b08acedbf1",
-        "type": "lp",
-        "desc": "Compounding muBOND",
-        "supply": 68705,
-        "fetchedAt": "2026-05-25T02:34:36.775Z"
-      },
-      "LOAZNDAZND": {
-        "address": "0x269b47978f4348c96f521658ef452ff85906fcfe",
-        "type": "lp",
-        "desc": "loAZND/AZND LP",
-        "supply": 256,
-        "fetchedAt": "2026-05-25T02:34:36.780Z"
+      "LOAZND": {
+        "address": "0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90",
+        "type": "core",
+        "desc": "Locked AZND",
+        "supply": 196159,
+        "fetchedAt": "2026-05-25T07:03:33.517Z"
       },
       "AZNDAUSD": {
         "address": "0x2d84d79c852f6842abe0304b70bbaa1506add457",
         "type": "lp",
         "desc": "AZND/AUSD LP",
         "supply": 100235,
-        "fetchedAt": "2026-05-25T02:34:36.781Z"
+        "fetchedAt": "2026-05-25T07:03:33.523Z"
+      },
+      "CLOAZND": {
+        "address": "0xf7a6ab4af86966c141d3c5633df658e5cdb0a735",
+        "type": "lp",
+        "desc": "Compounding loAZND",
+        "supply": 13125,
+        "fetchedAt": "2026-05-25T07:03:33.536Z"
+      },
+      "CMUBOND": {
+        "address": "0x92ee4b4d33dc61bd93a88601f29131b08acedbf1",
+        "type": "lp",
+        "desc": "Compounding muBOND",
+        "supply": 68705,
+        "fetchedAt": "2026-05-25T07:03:33.538Z"
+      },
+      "MTUSD": {
+        "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
+        "type": "lp",
+        "desc": "mtUSD",
+        "supply": 11519,
+        "fetchedAt": "2026-05-25T07:03:33.541Z"
+      },
+      "NLOAZND": {
+        "address": "0x293e2f01a38fe690eb8e570ab952b24b225113a7",
+        "type": "lp",
+        "desc": "Native loAZND",
+        "supply": 173033,
+        "fetchedAt": "2026-05-25T07:03:33.542Z"
+      },
+      "LOAZNDAZND": {
+        "address": "0x269b47978f4348c96f521658ef452ff85906fcfe",
+        "type": "lp",
+        "desc": "loAZND/AZND LP",
+        "supply": 256,
+        "fetchedAt": "2026-05-25T07:03:33.544Z"
       },
       "MUBONDAUSD": {
         "address": "0x1e8d78e9b3f0152d54d32904b7933f1cfe439df1",
         "type": "lp",
         "desc": "muBOND/AUSD LP",
         "supply": 46035,
-        "fetchedAt": "2026-05-25T02:34:36.786Z"
+        "fetchedAt": "2026-05-25T07:03:33.555Z"
       },
       "SBMU": {
         "address": "0x4c0d041889281531ff060290d71091401caa786d",
         "type": "lp",
         "desc": "sbMU",
         "supply": 8489,
-        "fetchedAt": "2026-05-25T02:34:36.808Z"
+        "fetchedAt": "2026-05-25T07:03:33.577Z"
       }
     },
     "eth": {}
@@ -768,7 +768,7 @@
     "dau": [
       {
         "date": "2026-05-25",
-        "value": 31
+        "value": 65
       },
       {
         "date": "2026-05-24",
@@ -887,12 +887,12 @@
         "value": 41
       }
     ],
-    "dauLatest": 31,
-    "dauWoW": -64.77,
+    "dauLatest": 65,
+    "dauWoW": -26.14,
     "wau": [
       {
         "week": "2026-05-25",
-        "value": 31
+        "value": 65
       },
       {
         "week": "2026-05-18",
@@ -939,12 +939,12 @@
         "value": 289
       }
     ],
-    "wauLatest": 31,
-    "wauWoW": -94.55,
+    "wauLatest": 65,
+    "wauWoW": -88.58,
     "retentionCohorts": [
       {
         "week": "2026-05-25",
-        "cohortSize": 11
+        "cohortSize": 13
       },
       {
         "week": "2026-05-18",
@@ -970,15 +970,15 @@
     "referringDomains": [
       {
         "domain": "$direct",
-        "users": 297
+        "users": 294
       },
       {
         "domain": "mudigital.net",
-        "users": 151
+        "users": 153
       },
       {
         "domain": "www.google.com",
-        "users": 31
+        "users": 29
       },
       {
         "domain": "app.layer3.xyz",
@@ -1026,12 +1026,12 @@
         "transparency": 0,
         "rewards": 95,
         "earn": 59,
-        "swap": 235,
-        "dashboard": 42,
-        "totalUsers": 242
+        "swap": 287,
+        "dashboard": 41,
+        "totalUsers": 240
       }
     },
-    "fetchedAt": "2026-05-25T02:34:45.338Z"
+    "fetchedAt": "2026-05-25T07:03:38.616Z"
   },
   "meta": {
     "version": "3.0",
@@ -1049,9 +1049,9 @@
     }
   },
   "deltas": {
-    "tvlWoW": -0.55,
-    "tvlAbs": -36000,
-    "dauWoW": -64.77,
-    "wauWoW": -94.55
+    "tvlWoW": -66.25,
+    "tvlAbs": -12884929.41,
+    "dauWoW": -26.14,
+    "wauWoW": -88.58
   }
 }
