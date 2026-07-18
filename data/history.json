@@ -5,6 +5,27 @@
       "tvl": 17303288.15,
       "azndApy": 0,
       "mubondApy": 0,
+      "dauLatest": 30,
+      "wauLatest": 191,
+      "monadSupplies": {
+        "LOAZND": 196178,
+        "CLOAZND": 13622,
+        "NLOAZND": 144486,
+        "MTUSD": 11449,
+        "AZND": 16326375,
+        "MUBOND": 927145,
+        "LOAZNDAZND": 113,
+        "CMUBOND": 23349,
+        "AZNDAUSD": 145,
+        "MUBONDAUSD": 341,
+        "SBMU": 5995
+      }
+    },
+    {
+      "date": "2026-07-18",
+      "tvl": 17303288.15,
+      "azndApy": 0,
+      "mubondApy": 0,
       "dauLatest": 29,
       "wauLatest": 190,
       "monadSupplies": {
@@ -1866,27 +1887,6 @@
         "MUBONDAUSD": 341,
         "LOAZNDAZND": 113,
         "SBMU": 6995
-      }
-    },
-    {
-      "date": "2026-07-11",
-      "tvl": 17303288.15,
-      "azndApy": 0,
-      "mubondApy": 0,
-      "dauLatest": 13,
-      "wauLatest": 396,
-      "monadSupplies": {
-        "AZND": 16326375,
-        "CLOAZND": 13625,
-        "LOAZND": 177701,
-        "MUBOND": 927145,
-        "CMUBOND": 23365,
-        "NLOAZND": 146429,
-        "MTUSD": 11450,
-        "AZNDAUSD": 145,
-        "SBMU": 6995,
-        "MUBONDAUSD": 341,
-        "LOAZNDAZND": 113
       }
     }
   ]
