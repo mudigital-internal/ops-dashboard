@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-08-03T05:32:58.256Z",
+  "collectedAt": "2026-08-03T09:22:04.135Z",
   "muApp": {
     "tvl": {
       "current": 17303288.15,
@@ -549,12 +549,12 @@
           "total": 17303288.15
         }
       ],
-      "fetchedAt": "2026-08-03T05:32:50.279Z"
+      "fetchedAt": "2026-08-03T09:21:58.119Z"
     },
     "apy": {
       "aznd": 0,
       "mubond": 0,
-      "fetchedAt": "2026-08-03T05:32:50.586Z"
+      "fetchedAt": "2026-08-03T09:21:58.443Z"
     },
     "loAzndPrice": {
       "current": 1.04,
@@ -680,87 +680,87 @@
           "price": 1.0375313521672005
         }
       ],
-      "fetchedAt": "2026-08-03T05:32:50.796Z"
+      "fetchedAt": "2026-08-03T09:21:58.592Z"
     }
   },
   "onchain": {
     "monad": {
-      "MUBOND": {
-        "address": "0x336d414754967c6682b5a665c7daf6f1409e63e8",
+      "AZND": {
+        "address": "0x4917a5ec9fcb5e10f47cbb197abe6ab63be81fe8",
         "type": "core",
-        "desc": "mu Bond",
-        "supply": 927145,
-        "fetchedAt": "2026-08-03T05:32:50.060Z"
+        "desc": "Asia Dollar",
+        "supply": 16326375,
+        "fetchedAt": "2026-08-03T09:21:57.776Z"
       },
       "CLOAZND": {
         "address": "0xf7a6ab4af86966c141d3c5633df658e5cdb0a735",
         "type": "lp",
         "desc": "Compounding loAZND",
         "supply": 13589,
-        "fetchedAt": "2026-08-03T05:32:50.112Z"
-      },
-      "CMUBOND": {
-        "address": "0x92ee4b4d33dc61bd93a88601f29131b08acedbf1",
-        "type": "lp",
-        "desc": "Compounding muBOND",
-        "supply": 22260,
-        "fetchedAt": "2026-08-03T05:32:50.116Z"
+        "fetchedAt": "2026-08-03T09:21:57.912Z"
       },
       "LOAZND": {
         "address": "0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90",
         "type": "core",
         "desc": "Locked AZND",
         "supply": 195956,
-        "fetchedAt": "2026-08-03T05:32:50.118Z"
+        "fetchedAt": "2026-08-03T09:21:57.973Z"
+      },
+      "MUBOND": {
+        "address": "0x336d414754967c6682b5a665c7daf6f1409e63e8",
+        "type": "core",
+        "desc": "mu Bond",
+        "supply": 927145,
+        "fetchedAt": "2026-08-03T09:21:57.996Z"
       },
       "NLOAZND": {
         "address": "0x293e2f01a38fe690eb8e570ab952b24b225113a7",
         "type": "lp",
         "desc": "Native loAZND",
         "supply": 144385,
-        "fetchedAt": "2026-08-03T05:32:50.124Z"
+        "fetchedAt": "2026-08-03T09:21:58.037Z"
       },
-      "MTUSD": {
-        "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
+      "CMUBOND": {
+        "address": "0x92ee4b4d33dc61bd93a88601f29131b08acedbf1",
         "type": "lp",
-        "desc": "mtUSD",
-        "supply": 147,
-        "fetchedAt": "2026-08-03T05:32:50.142Z"
-      },
-      "AZND": {
-        "address": "0x4917a5ec9fcb5e10f47cbb197abe6ab63be81fe8",
-        "type": "core",
-        "desc": "Asia Dollar",
-        "supply": 16326375,
-        "fetchedAt": "2026-08-03T05:32:50.174Z"
-      },
-      "LOAZNDAZND": {
-        "address": "0x269b47978f4348c96f521658ef452ff85906fcfe",
-        "type": "lp",
-        "desc": "loAZND/AZND LP",
-        "supply": 101,
-        "fetchedAt": "2026-08-03T05:32:50.197Z"
-      },
-      "SBMU": {
-        "address": "0x4c0d041889281531ff060290d71091401caa786d",
-        "type": "lp",
-        "desc": "sbMU",
-        "supply": 5995,
-        "fetchedAt": "2026-08-03T05:32:50.201Z"
-      },
-      "AZNDAUSD": {
-        "address": "0x2d84d79c852f6842abe0304b70bbaa1506add457",
-        "type": "lp",
-        "desc": "AZND/AUSD LP",
-        "supply": 145,
-        "fetchedAt": "2026-08-03T05:32:50.285Z"
+        "desc": "Compounding muBOND",
+        "supply": 22260,
+        "fetchedAt": "2026-08-03T09:21:58.047Z"
       },
       "MUBONDAUSD": {
         "address": "0x1e8d78e9b3f0152d54d32904b7933f1cfe439df1",
         "type": "lp",
         "desc": "muBOND/AUSD LP",
         "supply": 240,
-        "fetchedAt": "2026-08-03T05:32:50.285Z"
+        "fetchedAt": "2026-08-03T09:21:58.057Z"
+      },
+      "AZNDAUSD": {
+        "address": "0x2d84d79c852f6842abe0304b70bbaa1506add457",
+        "type": "lp",
+        "desc": "AZND/AUSD LP",
+        "supply": 145,
+        "fetchedAt": "2026-08-03T09:21:58.067Z"
+      },
+      "LOAZNDAZND": {
+        "address": "0x269b47978f4348c96f521658ef452ff85906fcfe",
+        "type": "lp",
+        "desc": "loAZND/AZND LP",
+        "supply": 101,
+        "fetchedAt": "2026-08-03T09:21:58.067Z"
+      },
+      "MTUSD": {
+        "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
+        "type": "lp",
+        "desc": "mtUSD",
+        "supply": 147,
+        "fetchedAt": "2026-08-03T09:21:58.167Z"
+      },
+      "SBMU": {
+        "address": "0x4c0d041889281531ff060290d71091401caa786d",
+        "type": "lp",
+        "desc": "sbMU",
+        "supply": 5995,
+        "fetchedAt": "2026-08-03T09:21:58.245Z"
       }
     },
     "eth": {}
@@ -773,7 +773,7 @@
     "dau": [
       {
         "date": "2026-08-03",
-        "value": 19
+        "value": 32
       },
       {
         "date": "2026-08-02",
@@ -892,12 +892,12 @@
         "value": 51
       }
     ],
-    "dauLatest": 19,
-    "dauWoW": -96.7,
+    "dauLatest": 32,
+    "dauWoW": -94.44,
     "wau": [
       {
         "week": "2026-08-03",
-        "value": 19
+        "value": 32
       },
       {
         "week": "2026-07-27",
@@ -944,12 +944,12 @@
         "value": 568
       }
     ],
-    "wauLatest": 19,
-    "wauWoW": -97.67,
+    "wauLatest": 32,
+    "wauWoW": -96.07,
     "retentionCohorts": [
       {
         "week": "2026-08-03",
-        "cohortSize": 9
+        "cohortSize": 17
       },
       {
         "week": "2026-07-27",
@@ -957,7 +957,7 @@
       },
       {
         "week": "2026-07-20",
-        "cohortSize": 141
+        "cohortSize": 142
       },
       {
         "week": "2026-07-13",
@@ -975,11 +975,11 @@
     "referringDomains": [
       {
         "domain": "$direct",
-        "users": 211
+        "users": 212
       },
       {
         "domain": "mudigital.net",
-        "users": 69
+        "users": 68
       },
       {
         "domain": "www.google.com",
@@ -1042,13 +1042,13 @@
       "last7Days": {
         "transparency": 1,
         "rewards": 2,
-        "earn": 7,
-        "swap": 71,
-        "dashboard": 9,
-        "totalUsers": 180
+        "earn": 8,
+        "swap": 7,
+        "dashboard": 13,
+        "totalUsers": 147
       }
     },
-    "fetchedAt": "2026-08-03T05:32:58.256Z"
+    "fetchedAt": "2026-08-03T09:22:04.135Z"
   },
   "meta": {
     "version": "3.0",
@@ -1068,7 +1068,7 @@
   "deltas": {
     "tvlWoW": 0,
     "tvlAbs": 0,
-    "dauWoW": -96.7,
-    "wauWoW": -97.67
+    "dauWoW": -94.44,
+    "wauWoW": -96.07
   }
 }
