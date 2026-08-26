@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-08-26T04:30:21.365Z",
+  "collectedAt": "2026-08-26T05:24:07.872Z",
   "muApp": {
     "tvl": {
       "current": 17303288.15,
@@ -549,7 +549,7 @@
           "total": 17303288.15
         }
       ],
-      "fetchedAt": "2026-08-26T04:30:13.918Z"
+      "fetchedAt": "2026-08-26T05:23:51.716Z"
     }
   },
   "onchain": {
@@ -559,77 +559,77 @@
         "type": "core",
         "desc": "Asia Dollar",
         "supply": 16326375,
-        "fetchedAt": "2026-08-26T04:30:13.325Z"
+        "fetchedAt": "2026-08-26T05:23:51.396Z"
       },
       "MUBOND": {
         "address": "0x336d414754967c6682b5a665c7daf6f1409e63e8",
         "type": "core",
         "desc": "mu Bond",
         "supply": 927145,
-        "fetchedAt": "2026-08-26T04:30:13.379Z"
-      },
-      "LOAZND": {
-        "address": "0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90",
-        "type": "core",
-        "desc": "Locked AZND",
-        "supply": 195956,
-        "fetchedAt": "2026-08-26T04:30:13.431Z"
+        "fetchedAt": "2026-08-26T05:23:51.444Z"
       },
       "CLOAZND": {
         "address": "0xf7a6ab4af86966c141d3c5633df658e5cdb0a735",
         "type": "lp",
         "desc": "Compounding loAZND",
         "supply": 12872,
-        "fetchedAt": "2026-08-26T04:30:13.432Z"
+        "fetchedAt": "2026-08-26T05:23:51.493Z"
       },
       "CMUBOND": {
         "address": "0x92ee4b4d33dc61bd93a88601f29131b08acedbf1",
         "type": "lp",
         "desc": "Compounding muBOND",
         "supply": 18473,
-        "fetchedAt": "2026-08-26T04:30:13.465Z"
-      },
-      "MTUSD": {
-        "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
-        "type": "lp",
-        "desc": "mtUSD",
-        "supply": 111,
-        "fetchedAt": "2026-08-26T04:30:13.482Z"
-      },
-      "LOAZNDAZND": {
-        "address": "0x269b47978f4348c96f521658ef452ff85906fcfe",
-        "type": "lp",
-        "desc": "loAZND/AZND LP",
-        "supply": 101,
-        "fetchedAt": "2026-08-26T04:30:13.488Z"
-      },
-      "SBMU": {
-        "address": "0x4c0d041889281531ff060290d71091401caa786d",
-        "type": "lp",
-        "desc": "sbMU",
-        "supply": 5995,
-        "fetchedAt": "2026-08-26T04:30:13.491Z"
+        "fetchedAt": "2026-08-26T05:23:51.551Z"
       },
       "NLOAZND": {
         "address": "0x293e2f01a38fe690eb8e570ab952b24b225113a7",
         "type": "lp",
         "desc": "Native loAZND",
         "supply": 143805,
-        "fetchedAt": "2026-08-26T04:30:13.492Z"
+        "fetchedAt": "2026-08-26T05:23:51.592Z"
+      },
+      "LOAZND": {
+        "address": "0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90",
+        "type": "core",
+        "desc": "Locked AZND",
+        "supply": 195956,
+        "fetchedAt": "2026-08-26T05:23:51.616Z"
+      },
+      "SBMU": {
+        "address": "0x4c0d041889281531ff060290d71091401caa786d",
+        "type": "lp",
+        "desc": "sbMU",
+        "supply": 5995,
+        "fetchedAt": "2026-08-26T05:23:51.648Z"
       },
       "MUBONDAUSD": {
         "address": "0x1e8d78e9b3f0152d54d32904b7933f1cfe439df1",
         "type": "lp",
         "desc": "muBOND/AUSD LP",
         "supply": 90,
-        "fetchedAt": "2026-08-26T04:30:13.494Z"
+        "fetchedAt": "2026-08-26T05:23:51.651Z"
       },
       "AZNDAUSD": {
         "address": "0x2d84d79c852f6842abe0304b70bbaa1506add457",
         "type": "lp",
         "desc": "AZND/AUSD LP",
         "supply": 135,
-        "fetchedAt": "2026-08-26T04:30:13.502Z"
+        "fetchedAt": "2026-08-26T05:23:51.652Z"
+      },
+      "LOAZNDAZND": {
+        "address": "0x269b47978f4348c96f521658ef452ff85906fcfe",
+        "type": "lp",
+        "desc": "loAZND/AZND LP",
+        "supply": 101,
+        "fetchedAt": "2026-08-26T05:23:51.655Z"
+      },
+      "MTUSD": {
+        "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
+        "type": "lp",
+        "desc": "mtUSD",
+        "supply": 111,
+        "fetchedAt": "2026-08-26T05:23:51.721Z"
       }
     },
     "eth": {}
@@ -826,7 +826,7 @@
       },
       {
         "week": "2026-08-10",
-        "cohortSize": 384
+        "cohortSize": 385
       },
       {
         "week": "2026-08-03",
@@ -933,7 +933,7 @@
         "totalUsers": 341
       }
     },
-    "fetchedAt": "2026-08-26T04:30:21.365Z"
+    "fetchedAt": "2026-08-26T05:24:07.871Z"
   },
   "meta": {
     "version": "3.0",
