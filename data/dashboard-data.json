@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-10-17T07:19:19.734Z",
+  "collectedAt": "2026-10-17T11:51:20.387Z",
   "muApp": {},
   "onchain": {
     "monad": {
@@ -8,77 +8,77 @@
         "type": "core",
         "desc": "Asia Dollar",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.146Z"
+        "fetchedAt": "2026-10-17T11:51:06.959Z"
       },
       "MUBOND": {
         "address": "0x336d414754967c6682b5a665c7daf6f1409e63e8",
         "type": "core",
         "desc": "mu Bond",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.189Z"
+        "fetchedAt": "2026-10-17T11:51:07.041Z"
       },
       "LOAZND": {
         "address": "0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90",
         "type": "core",
         "desc": "Locked AZND",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.190Z"
+        "fetchedAt": "2026-10-17T11:51:07.052Z"
       },
       "CLOAZND": {
         "address": "0xf7a6ab4af86966c141d3c5633df658e5cdb0a735",
         "type": "lp",
         "desc": "Compounding loAZND",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.205Z"
+        "fetchedAt": "2026-10-17T11:51:07.119Z"
       },
       "CMUBOND": {
         "address": "0x92ee4b4d33dc61bd93a88601f29131b08acedbf1",
         "type": "lp",
         "desc": "Compounding muBOND",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.215Z"
+        "fetchedAt": "2026-10-17T11:51:07.147Z"
       },
       "NLOAZND": {
         "address": "0x293e2f01a38fe690eb8e570ab952b24b225113a7",
         "type": "lp",
         "desc": "Native loAZND",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.232Z"
+        "fetchedAt": "2026-10-17T11:51:07.178Z"
       },
       "MTUSD": {
         "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
         "type": "lp",
         "desc": "mtUSD",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.247Z"
+        "fetchedAt": "2026-10-17T11:51:07.191Z"
       },
       "AZNDAUSD": {
         "address": "0x2d84d79c852f6842abe0304b70bbaa1506add457",
         "type": "lp",
         "desc": "AZND/AUSD LP",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.249Z"
+        "fetchedAt": "2026-10-17T11:51:07.212Z"
       },
       "MUBONDAUSD": {
         "address": "0x1e8d78e9b3f0152d54d32904b7933f1cfe439df1",
         "type": "lp",
         "desc": "muBOND/AUSD LP",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.261Z"
+        "fetchedAt": "2026-10-17T11:51:07.225Z"
       },
       "LOAZNDAZND": {
         "address": "0x269b47978f4348c96f521658ef452ff85906fcfe",
         "type": "lp",
         "desc": "loAZND/AZND LP",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.266Z"
+        "fetchedAt": "2026-10-17T11:51:07.234Z"
       },
       "SBMU": {
         "address": "0x4c0d041889281531ff060290d71091401caa786d",
         "type": "lp",
         "desc": "sbMU",
         "supply": null,
-        "fetchedAt": "2026-10-17T07:19:05.271Z"
+        "fetchedAt": "2026-10-17T11:51:07.321Z"
       }
     },
     "eth": {}
@@ -155,7 +155,7 @@
       },
       {
         "date": "2026-09-17",
-        "value": 24
+        "value": 13
       }
     ],
     "dauLatest": 1,
@@ -207,7 +207,7 @@
       },
       {
         "week": "2026-07-20",
-        "value": 43
+        "value": 34
       }
     ],
     "wauLatest": 1,
@@ -219,19 +219,19 @@
       },
       {
         "week": "2026-09-21",
-        "cohortSize": 204
+        "cohortSize": 206
       },
       {
         "week": "2026-09-14",
-        "cohortSize": 223
+        "cohortSize": 225
       },
       {
         "week": "2026-09-07",
-        "cohortSize": 218
+        "cohortSize": 219
       },
       {
         "week": "2026-08-31",
-        "cohortSize": 47
+        "cohortSize": 34
       }
     ],
     "referringDomains": [],
@@ -265,7 +265,7 @@
         "totalUsers": 0
       }
     },
-    "fetchedAt": "2026-10-17T07:19:19.734Z"
+    "fetchedAt": "2026-10-17T11:51:20.387Z"
   },
   "meta": {
     "version": "3.0",
