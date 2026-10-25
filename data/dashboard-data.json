@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-10-25T00:41:11.496Z",
+  "collectedAt": "2026-10-25T05:30:46.520Z",
   "muApp": {},
   "onchain": {
     "monad": {
@@ -8,77 +8,77 @@
         "type": "core",
         "desc": "Asia Dollar",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.516Z"
+        "fetchedAt": "2026-10-25T05:30:40.388Z"
       },
       "MUBOND": {
         "address": "0x336d414754967c6682b5a665c7daf6f1409e63e8",
         "type": "core",
         "desc": "mu Bond",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.535Z"
-      },
-      "LOAZND": {
-        "address": "0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90",
-        "type": "core",
-        "desc": "Locked AZND",
-        "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.557Z"
+        "fetchedAt": "2026-10-25T05:30:40.403Z"
       },
       "CLOAZND": {
         "address": "0xf7a6ab4af86966c141d3c5633df658e5cdb0a735",
         "type": "lp",
         "desc": "Compounding loAZND",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.574Z"
+        "fetchedAt": "2026-10-25T05:30:40.432Z"
+      },
+      "LOAZND": {
+        "address": "0x9c82eb49b51f7dc61e22ff347931ca32adc6cd90",
+        "type": "core",
+        "desc": "Locked AZND",
+        "supply": null,
+        "fetchedAt": "2026-10-25T05:30:40.437Z"
       },
       "CMUBOND": {
         "address": "0x92ee4b4d33dc61bd93a88601f29131b08acedbf1",
         "type": "lp",
         "desc": "Compounding muBOND",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.589Z"
-      },
-      "MTUSD": {
-        "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
-        "type": "lp",
-        "desc": "mtUSD",
-        "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.598Z"
+        "fetchedAt": "2026-10-25T05:30:40.441Z"
       },
       "NLOAZND": {
         "address": "0x293e2f01a38fe690eb8e570ab952b24b225113a7",
         "type": "lp",
         "desc": "Native loAZND",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.609Z"
+        "fetchedAt": "2026-10-25T05:30:40.464Z"
+      },
+      "MTUSD": {
+        "address": "0x0da39b740834090c146dc48357f6a435a1bb33b3",
+        "type": "lp",
+        "desc": "mtUSD",
+        "supply": null,
+        "fetchedAt": "2026-10-25T05:30:40.475Z"
       },
       "AZNDAUSD": {
         "address": "0x2d84d79c852f6842abe0304b70bbaa1506add457",
         "type": "lp",
         "desc": "AZND/AUSD LP",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.614Z"
+        "fetchedAt": "2026-10-25T05:30:40.476Z"
       },
       "MUBONDAUSD": {
         "address": "0x1e8d78e9b3f0152d54d32904b7933f1cfe439df1",
         "type": "lp",
         "desc": "muBOND/AUSD LP",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.662Z"
+        "fetchedAt": "2026-10-25T05:30:40.477Z"
       },
       "LOAZNDAZND": {
         "address": "0x269b47978f4348c96f521658ef452ff85906fcfe",
         "type": "lp",
         "desc": "loAZND/AZND LP",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.671Z"
+        "fetchedAt": "2026-10-25T05:30:40.478Z"
       },
       "SBMU": {
         "address": "0x4c0d041889281531ff060290d71091401caa786d",
         "type": "lp",
         "desc": "sbMU",
         "supply": null,
-        "fetchedAt": "2026-10-25T00:41:06.692Z"
+        "fetchedAt": "2026-10-25T05:30:40.488Z"
       }
     },
     "eth": {}
@@ -123,7 +123,7 @@
       },
       {
         "date": "2026-09-25",
-        "value": 18
+        "value": 15
       }
     ],
     "dauLatest": 1,
@@ -171,7 +171,7 @@
       },
       {
         "week": "2026-07-27",
-        "value": 26
+        "value": 16
       }
     ],
     "wauLatest": 1,
@@ -191,7 +191,7 @@
       },
       {
         "week": "2026-09-07",
-        "cohortSize": 21
+        "cohortSize": 19
       }
     ],
     "referringDomains": [],
@@ -225,7 +225,7 @@
         "totalUsers": 0
       }
     },
-    "fetchedAt": "2026-10-25T00:41:11.496Z"
+    "fetchedAt": "2026-10-25T05:30:46.520Z"
   },
   "meta": {
     "version": "3.0",
