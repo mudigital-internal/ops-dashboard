@@ -1,6 +1,24 @@
 {
   "snapshots": [
     {
+      "date": "2026-10-27",
+      "dauLatest": 1,
+      "wauLatest": 1,
+      "monadSupplies": {
+        "AZND": null,
+        "MUBOND": null,
+        "LOAZND": null,
+        "CLOAZND": null,
+        "NLOAZND": null,
+        "CMUBOND": null,
+        "MTUSD": null,
+        "AZNDAUSD": null,
+        "LOAZNDAZND": null,
+        "MUBONDAUSD": null,
+        "SBMU": null
+      }
+    },
+    {
       "date": "2026-10-26",
       "dauLatest": 1,
       "wauLatest": 1,
@@ -1597,24 +1615,6 @@
         "LOAZNDAZND": 101,
         "MTUSD": 100,
         "SBMU": 5995
-      }
-    },
-    {
-      "date": "2026-10-10",
-      "dauLatest": 2,
-      "wauLatest": 124,
-      "monadSupplies": {
-        "AZND": 16326375,
-        "CLOAZND": 12872,
-        "MUBOND": 927145,
-        "LOAZND": 195956,
-        "NLOAZND": 143796,
-        "SBMU": 5995,
-        "MTUSD": 100,
-        "CMUBOND": 15292,
-        "LOAZNDAZND": 101,
-        "AZNDAUSD": 135,
-        "MUBONDAUSD": 90
       }
     }
   ]
